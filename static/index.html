@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local RAG Comparator + Index Builder</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Local RAG Comparator + Index Builder</h1>
+    <div class="sub">
+      Upload docs → Build index → Ask once. See <strong>RAG</strong> and <strong>Bare LLM</strong> answers side-by-side.
+      <span id="health" class="meta"></span>
+    </div>
+
+    <div class="card">
+      <h3>1) Dataset</h3>
+      <div class="row">
+        <div class="grow">
+          <input id="files" name="files" type="file" multiple />
+          <div class="muted">Allowed: .txt .md .pdf .csv (multiple files okay)</div>
+        </div>
+        <div><button id="upload">Upload</button></div>
+        <div><button id="clear" title="Clear DATA_DIR">Clear</button></div>
+      </div>
+      <details style="margin-top:10px">
+        <summary>Show files in DATA_DIR</summary>
+        <div id="filelist" class="mono-wrap"></div>
+      </details>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>2) Build Index</h3>
+      <div class="grid3">
+        <div>
+          <label>Chunk Size</label>
+          <input id="chunk" type="number" value="1200" />
+        </div>
+        <div>
+          <label>Overlap</label>
+          <input id="overlap" type="number" value="200" />
+        </div>
+        <div style="align-self:end"><button id="build">Build</button></div>
+      </div>
+      <div id="buildout" class="mono-wrap" style="margin-top:10px"></div>
+    </div>
+
+    <div class="cols">
+      <div class="card">
+        <h3>3) Ask a Question</h3>
+        <div class="row">
+          <div class="grow">
+            <label for="q">Question</label>
+            <input id="q" type="text"/>
+          </div>
+          <div>
+            <label for="k">Top-K</label>
+            <input id="k" type="number" min="1" max="50" value="10" />
+          </div>
+          <div><button id="ask">Ask</button></div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+
+    <div class="cols">
+      <div class="card" id="rag">
+        <h3>RAG Answer</h3>
+        <div id="ragAns" class="mono-wrap"></div>
+        <div class="chunks">
+          <details>
+            <summary>Retrieved Chunks</summary>
+            <div id="chunks"></div>
+          </details>
+        </div>
+      </div>
+      <div class="card" id="llm">
+        <h3>Bare LLM Answer</h3>
+        <div id="llmAns" class="mono-wrap"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px">
+      <h3>Debug</h3>
+      <div id="meta" class="meta"></div>
+      <div id="timing" class="chips"></div>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

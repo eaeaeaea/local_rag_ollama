@@ -1,0 +1,12 @@
+order_id,customer_id,name,weight,distance,shipment type
+O101,C001,Aylin Kaya,3.0,120.0,standard shipping
+O102,C002,Mehmet Demir,7.0,80.0,standard shipping
+O103,C003,Elif Yılmaz,2.0,600.0,standard shipping
+O104,C004,Can Öztürk,4.0,200.0,express shipping
+O105,C005,Zeynep Arslan,5.0,100.0,standard shipping
+O106,C006,Deniz Aksoy,4.9,500.0,standard shipping
+O107,C007,Ahmet Kılıç,4.0,500.0,express shipping
+O108,C008,Ece Çetin,1.0,499.9,standard shipping
+O109,C009,Berk Yıldız,4.2,520.0,standard shipping
+O110,C010,Selin Koç,2.5,0.0,standard shipping
+O111,C011,Emre Akkus,2.5,200.0,standard shipping
