@@ -8,8 +8,8 @@ _No coding needed._
 
 ---
 
-<img width="1333" height="627" alt="Screenshot 2025-10-01 at 21 35 41" src="https://github.com/user-attachments/assets/faed4358-1ce6-4f38-90df-b80b49dabeee" />
 
+https://github.com/user-attachments/assets/fdf67be9-00c7-4bc7-b08d-1b86e703c384
 
 
 ## ✅ Requirements (one-time)
